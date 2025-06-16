@@ -74,36 +74,36 @@ export default function App() {
 	return (
 		<SafeAreaProvider>
 			<SafeAreaView>
-				<View className="h-screen flex flex-col items-center justify-center gap-4">
-					<View className="absolute w-full">
-						<View className="relative bottom-32 bg-black w-full p-4">
-							<Text className="text-lg font-semibold text-center text-white select-none">
-								LOGIN PAGE
+				<View className="flex justify-center h-full bg-white">
+					{/* LOGIN FORM */}
+					<View className="flex flex-col mb-10">
+							<Text className='w-full text-center font-semibold text-2xl'>
+								Welcome!
+							</Text>
+							<Text className='w-full text-center text-gray-500 mt-3'>
+								Please enter login information below.
 							</Text>
 						</View>
-					</View>
-					{/* LOGIN FORM */}
-					<View className="flex flex-col items-center justify-center gap-3">
-						<View className="flex flex-row">
-							<Text className="w-20">Username: </Text>
+					<View className="flex items-center gap-3">
+						<View className="flex flex-row items-center">
+							{/* <Text className="">Username: </Text> */}
 							<TextInput
-								className="flex-grow border-2 border-gray-300"
+								className="bg-gray-200 rounded-xl h-12 w-[75%] p-3"
 								onChangeText={handleUsernameChange}
 								placeholder="Enter Username"
 							></TextInput>
 						</View>
 						<View className="flex flex-row">
-							<Text className="w-20">Password: </Text>
 							<TextInput
-								className="flex-grow border-2 border-gray-300"
+								className="bg-gray-200 rounded-xl h-12 w-[75%] p-3"
 								onChangeText={handlePasswordChange}
 								placeholder="Enter Password"
 							></TextInput>
 						</View>
-						<View className="flex flex-row">
-							<TouchableHighlight onPress={handleLogin}>
-								<View className="w-20 bg-sky-500 rounded p-2 active:bg-sky-900">
-									<Text className="text-center text-white font-semibold select-none">
+						<View className="flex flex-row mt-10">
+							<TouchableHighlight className='w-[40%] h-12' onPress={handleLogin}>
+								<View className="h-full bg-sky-500 rounded-xl p-2 active:bg-sky-900">
+									<Text className="m-auto text-center align-middle text-white font-semibold select-none">
 										Login
 									</Text>
 								</View>
