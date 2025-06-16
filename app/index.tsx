@@ -1,4 +1,4 @@
-import { TextInput, Text, View, TouchableHighlight, Pressable } from 'react-native';
+import { TextInput, Text, View, Pressable } from 'react-native';
 import '../global.css';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useState } from 'react';
@@ -8,6 +8,7 @@ import credentials from '../assets/credentials.json';
 export default function App() {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+
 	const router = useRouter();
 	function handleUsernameChange(e: any) {
 		setUsername(e);
@@ -73,42 +74,52 @@ export default function App() {
 	}
 
 	return (
-
-				<View className="flex justify-center h-full bg-white">
-					{/* LOGIN FORM */}
-					<View className="flex flex-col mb-10">
-							<Text className='w-full text-center font-semibold text-2xl'>
-								Welcome!
-							</Text>
-							<Text className='w-full text-center text-gray-500 mt-3'>
-								Please enter login information below.
-							</Text>
-					</View>
-					<View className="flex items-center gap-3">
-						<View className="flex flex-row items-center">
-							{/* <Text className="">Username: </Text> */}
-							<TextInput
-								className="bg-gray-200 rounded-xl h-12 w-[75%] p-3"
-								onChangeText={handleUsernameChange}
-								placeholder="Enter Username"
-							></TextInput>
-						</View>
-						<View className="flex flex-row">
-							<TextInput
-								className="bg-gray-200 rounded-xl h-12 w-[75%] p-3"
-								onChangeText={handlePasswordChange}
-								placeholder="Enter Password"
-							></TextInput>
-						</View>
+ <SafeAreaProvider>
+            <SafeAreaView>
+                <View className={`flex justify-center lg:items-center h-full bg-white lg:m-10`}>
+                    {/* Login Form Container with responsive width */}
+                    <View className={'lg:w-[500px] lg:bg-gray-50 lg:p-8 lg:rounded-2xl lg:shadow-lg w-full'}>
+                        {/* TITLE SECTION */}
+                        <View className="flex flex-col mb-10">
+                            <Text className={`w-full text-center font-semibold text-2xl lg:text-3xl`}>
+                                Welcome!
+                            </Text>
+                            <Text className='w-full text-center text-gray-500 mt-3'>
+                                Please enter login information below.
+                            </Text>
+                        </View>
+                        
+                        {/* FORM FIELDS */}
+                        <View className="flex items-center gap-3">
+                            <View className="flex flex-row items-center">
+                                <TextInput
+                                    className={`bg-gray-200 rounded-xl h-12 w-[75%] lg:w-max p-3`}
+                                    onChangeText={handleUsernameChange}
+                                    placeholder="Enter Username"
+                                />
+                            </View>
+                            <View className="flex flex-row">
+                                <TextInput
+                                    className={`bg-gray-200 rounded-xl h-12 w-[75%] lg:w-max p-3`}
+                                    onChangeText={handlePasswordChange}
+                                    placeholder="Enter Password"
+                                    secureTextEntry={true}
+                                />
+                            </View>
+                            
+                            {/* LOGIN BUTTON */}
 						<View className="flex flex-row mt-10">
-								<Pressable className='h-full bg-sky-500 rounded-xl p-2 active:bg-sky-900 h-[30%] w-[40%] h-12' hitSlop={5} onPress={handleLogin}>
+								<Pressable className='bg-sky-500 rounded-xl p-2 active:bg-sky-900  w-[40%] h-[40%]  lg:w-max lg:h-max' hitSlop={5} onPress={handleLogin}>
 										<Text className="m-auto text-center align-middle text-white font-semibold select-none">
 											Login
 										</Text>
 								</Pressable>
 						</View>
-					</View>
-				</View>
+                        </View>
+                    </View>
+                </View>
+            </SafeAreaView>
+        </SafeAreaProvider>
 
 	);
 }
