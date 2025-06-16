@@ -1,4 +1,4 @@
-import { TextInput, Text, View, TouchableHighlight } from 'react-native';
+import { TextInput, Text, View, TouchableHighlight, Pressable } from 'react-native';
 import '../global.css';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useState } from 'react';
@@ -73,8 +73,7 @@ export default function App() {
 	}
 
 	return (
-		<SafeAreaProvider>
-			<SafeAreaView>
+
 				<View className="flex justify-center h-full bg-white">
 					{/* LOGIN FORM */}
 					<View className="flex flex-col mb-10">
@@ -102,19 +101,14 @@ export default function App() {
 							></TextInput>
 						</View>
 						<View className="flex flex-row mt-10">
-							<View className='w-[40%] h-12'>
-								<TouchableHighlight onPress={handleLogin} underlayColor="#0369a1">
-									<View className="h-full bg-sky-500 rounded-xl p-2 active:bg-sky-900">
+								<Pressable className='h-full bg-sky-500 rounded-xl p-2 active:bg-sky-900 h-[30%] w-[40%] h-12' hitSlop={5} onPress={handleLogin}>
 										<Text className="m-auto text-center align-middle text-white font-semibold select-none">
 											Login
 										</Text>
-									</View>
-								</TouchableHighlight>
-							</View>
+								</Pressable>
 						</View>
 					</View>
 				</View>
-			</SafeAreaView>
-		</SafeAreaProvider>
+
 	);
 }
