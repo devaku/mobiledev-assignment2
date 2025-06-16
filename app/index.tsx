@@ -71,6 +71,7 @@ export default function App() {
 			router.push('/calgary');
 		}
 	}
+
 	return (
 		<SafeAreaProvider>
 			<SafeAreaView>
@@ -83,7 +84,7 @@ export default function App() {
 							<Text className='w-full text-center text-gray-500 mt-3'>
 								Please enter login information below.
 							</Text>
-						</View>
+					</View>
 					<View className="flex items-center gap-3">
 						<View className="flex flex-row items-center">
 							{/* <Text className="">Username: </Text> */}
@@ -101,13 +102,15 @@ export default function App() {
 							></TextInput>
 						</View>
 						<View className="flex flex-row mt-10">
-							<TouchableHighlight className='w-[40%] h-12' onPress={handleLogin}>
-								<View className="h-full bg-sky-500 rounded-xl p-2 active:bg-sky-900">
-									<Text className="m-auto text-center align-middle text-white font-semibold select-none">
-										Login
-									</Text>
-								</View>
-							</TouchableHighlight>
+							<View className='w-[40%] h-12'>
+								<TouchableHighlight onPress={handleLogin} underlayColor="#0369a1">
+									<View className="h-full bg-sky-500 rounded-xl p-2 active:bg-sky-900">
+										<Text className="m-auto text-center align-middle text-white font-semibold select-none">
+											Login
+										</Text>
+									</View>
+								</TouchableHighlight>
+							</View>
 						</View>
 					</View>
 				</View>
