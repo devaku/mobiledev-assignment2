@@ -3,13 +3,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Vancouver() {
     const openVancouverWebsite = () => {
-        Linking.openURL('o	https://vancouver.ca/');
+        Linking.openURL('https://vancouver.ca/');
     };
 
     return (
         <SafeAreaView className="flex-1">
             <ScrollView className="flex-1 bg-white">
-                <View className="p-4">
+                <View className="px-4 py-16">
 					<View className="w-full flex items-center justify-center mb-4">
 						<Image 
 							source={require('../../assets/ac04c7e8d1f31e1bcfc7db15f942ff71b194da6d-1920x1195.jpg')}

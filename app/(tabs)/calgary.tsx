@@ -9,7 +9,7 @@ export default function Calgary() {
     return (
         <SafeAreaView className="flex-1">
             <ScrollView className="flex-1 bg-white">
-                <View className="p-4">
+                <View className="px-4 py-16">
 					<View className="w-full flex items-center justify-center mb-4">
 						<Image 
 							source={require('../../assets/Calgary-foreground-Pengrowth-Saddledome-Canada-Alberta.webp')}

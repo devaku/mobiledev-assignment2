@@ -27,6 +27,8 @@ export default function TabLayout() {
 				name="calgary"
 				options={{
 					title: 'Calgary',
+					headerStyle: {backgroundColor: 'white', borderBottomWidth: 1 },
+					headerTransparent: true
 				}}
 			/>
 			{/* <Tabs.Screen
@@ -48,6 +50,8 @@ export default function TabLayout() {
 				name="vancouver"
 				options={{
 					title: 'Vancouver',
+					headerStyle: {backgroundColor: 'white', borderBottomWidth: 1 },
+					headerTransparent: true
 				}}
 			/>
 		</Tabs>
